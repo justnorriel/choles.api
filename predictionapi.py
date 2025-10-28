@@ -34,7 +34,7 @@ app.add_middleware(
 )
 
 DB_CONFIG = {
-    "host": os.environ.get("DB_HOST", "127.0.0.1"),
+    "host": os.environ.get("DB_HOST", "srv1154.hstgr.io"),
     "port": int(os.environ.get("DB_PORT", "3306")),
     "user": os.environ.get("DB_USER", "u981606973_cholesAdmin"),
     "password": os.environ.get("DB_PASSWORD", "q~K:SNCwU]F1"),
@@ -50,7 +50,7 @@ def fetch_monthly_sales():
         query = """
             SELECT DATE_FORMAT(event_date, '%Y-%m') AS month,
                    SUM(downpayment_price + balance) AS total_sales
-            FROM reservation
+            FROM reservations
             WHERE event_date IS NOT NULL
             GROUP BY month
             ORDER BY month ASC
