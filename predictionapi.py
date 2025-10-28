@@ -38,7 +38,10 @@ DB_CONFIG = {
     "port": int(os.environ.get("DB_PORT", "3306")),
     "user": os.environ.get("DB_USER", "u981606973_cholesAdmin"),
     "password": os.environ.get("DB_PASSWORD", "q~K:SNCwU]F1"),
-    "database": os.environ.get("DB_NAME", "u981606973_choles_db")
+    "database": os.environ.get("DB_NAME", "u981606973_choles_db"),
+    "connect_timeout": 10,
+    "autocommit": True,
+    "charset": "utf8mb4"
 }
 
 
